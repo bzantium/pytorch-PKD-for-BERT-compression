@@ -320,9 +320,9 @@ def main():
     parser.add_argument("--output_dir", default='tmp/', type=str,
                         help="The output directory where the model predictions and checkpoints will be written.")
     parser.add_argument('--num_hidden_layers', default=6, type=int)
-    parser.add_argument("--alpha", default=1.0, type=float,
+    parser.add_argument("--alpha", default=0.5, type=float,
                         help="Train loss ratio.")
-    parser.add_argument("--beta", default=1.0, type=float,
+    parser.add_argument("--beta", default=100.0, type=float,
                         help="Distillation loss ratio.")
     parser.add_argument("--temperature", default=5.0, type=float,
                         help="Distillation temperature for soft target.")
