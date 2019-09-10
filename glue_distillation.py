@@ -181,10 +181,10 @@ def train(args, train_dataset, t_model, s_model, order, d_criterion, tokenizer):
                         for key, value in results.items():
                             tb_writer.add_scalar('eval_{}'.format(key), value, global_step)
                     tb_writer.add_scalar('lr', scheduler.get_lr()[0], global_step)
-                    tb_writer.add_scalar('total loss', average_loss /args.logging_steps, global_step)
-                    tb_writer.add_scalar('train loss', train_avg_loss /args.logging_steps, global_step)
-                    tb_writer.add_scalar('soft loss', soft_avg_loss /args.logging_steps, global_step)
-                    tb_writer.add_scalar('distill loss', distill_avg_loss /args.logging_steps, global_step)
+                    tb_writer.add_scalar('total loss', average_loss / args.logging_steps, global_step)
+                    tb_writer.add_scalar('train loss', train_avg_loss / args.logging_steps, global_step)
+                    tb_writer.add_scalar('soft loss', soft_avg_loss / args.logging_steps, global_step)
+                    tb_writer.add_scalar('distill loss', distill_avg_loss / args.logging_steps, global_step)
 
                     average_loss = 0.0
                     train_avg_loss = 0.0

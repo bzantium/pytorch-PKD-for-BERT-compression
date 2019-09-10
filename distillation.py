@@ -4,19 +4,6 @@ import torch.nn.functional as F
 from operator import itemgetter
 
 
-def calculate(t_model, s_model, input_ids, token_type_ids, attention_mask, labels):
-    with torch.no_grad():
-        t_outputs = t_model(input_ids=input_ids,
-                            token_type_ids=token_type_ids,
-                            attention_mask=attention_mask)
-
-    s_outputs = s_model(input_ids=input_ids,
-                        token_type_ids=token_type_ids,
-                        attention_mask=attention_mask,
-                        labels=labels)
-    return t_outputs, s_outputs
-
-
 class PatientDistillation(nn.Module):
     def __init__(self, t_config, s_config):
         super(PatientDistillation, self).__init__()
